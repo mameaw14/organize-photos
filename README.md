@@ -27,7 +27,7 @@ pipenv run python3 organize_photos.py /path/to/your/photos
   - By month: `--format "%Y-%m"`
   - By year: `--format "%Y"`
 - Limit number of files (`-l`):
-  -To process just 10 files: `--limit 10`
+  - To process just 10 files: `--limit 10`
 
 ### Example
 Process 20 files and sort them into monthly folders:

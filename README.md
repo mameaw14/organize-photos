@@ -1,54 +1,36 @@
 # Photo Organizer Script
 
-A command line script to organize photos into `YYYY-MM-DD` folder based on taken date
+Sorts photos into folders by date.
 
+## Setup
 
-## Requirements
-
--   Python 3.x
--   The `exifread` Python library
-
----
-
-## Installation & Usage
-
-This script is run from the command line. It is highly recommended to use a virtual environment to manage dependencies. `pipenv` is an excellent tool for this.
-
-### Method 1: Using `pipenv` (Recommended)
-
-1.  **Install `pipenv`:**
-    ```bash
-    pip3 install pipenv
-    ```
-
-2.  **Navigate to the Script's Directory:**
+1.  **Go to script folder:**
     ```bash
     cd /path/to/your/script
     ```
 
-3.  **Install Dependencies:**
+2.  **Install stuff:**
     ```bash
     pipenv install exifread
     ```
 
-4.  **Run the Script:**
-    Provide the path to your photo folder as an argument after the script name.
-    ```bash
-    pipenv run python3 organize_photos.py /path/to/your/photos
-    ```
-    *(Replace `/path/to/your/photos` with the actual folder path.)*
 
-### Method 2: Using a Global `pip` Installation
+## How to Run
 
-If you prefer not to use a virtual environment, you can install the package globally.
+Provide the path to your photo folder.
+```bash
+pipenv run python3 organize_photos.py /path/to/your/photos
+```
 
-1.  **Install Dependencies:**
-    ```bash
-    pip3 install exifread
-    ```
+### Options
+- Change folder format (`-f`):
+  - By month: `--format "%Y-%m"`
+  - By year: `--format "%Y"`
+- Limit number of files (`-l`):
+  -To process just 10 files: `--limit 10`
 
-2.  **Run the Script:**
-    Navigate to the script's directory and run it, providing the path to your photo folder.
-    ```bash
-    python3 organize_photos.py /path/to/your/photos
-    ```
+### Example
+Process 20 files and sort them into monthly folders:
+```bash
+pipenv run python3 organize_photos.py /path/to/your/photos -f "%Y-%m" -l 20
+```
